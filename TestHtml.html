@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h1> Special button for sexyboos below! Try press :D </h1>
+</body>
+  <head>
+    <title>Surprise Button</title>
+    <style>
+      #random-index {
+        display: none;
+      }
+    </style>
+    <script>
+      function showRandomImage() {
+        // Get all the images in the folder
+        var images = ['Im1.jpg', 'Im2.jpg', 'Im3.jpg', 'Im4.jpg', 'Im5.jpg', 'Im6.jpg', 'Im7.jpg', 'Im8.jpg', 'Im9.jpg', 'Im10.jpg', 'Im11.jpg', 'Im12.jpg', 'Im13.jpg', 'Im14.jpg', 'Im15.jpg', 'Im16.jpg', 'Im17.jpg', 'Im18.jpg', 'Im19.jpg', 'Im20.jpg', 'Im21.jpg', 'Im22.jpg', 'Im23.jpg', 'Im24.jpg', 'Im25.jpg', 'Im26.jpg', 'Im27.jpg', 'Im28.jpg', 'Im29.jpg', 'Im30.jpg', 'Im31.jpg', 'Im32.jpg', 'Im33.jpg', 'Im34.jpg', 'Im35.jpg', 'Im36.jpg', 'Im37.jpg'];
+        var numImages = images.length;
+
+        // Generate a random number from 1 to the number of images
+        var randomIndex = Math.floor(Math.random() * numImages) + 1;
+
+        // Set the source of the image tag to the selected image
+        document.getElementById("random-image").src = images[randomIndex - 1];
+
+        // Set the text of the random index element
+        var randomIndexElement = document.getElementById("random-index");
+        randomIndexElement.textContent = randomIndex;
+        randomIndexElement.style.display = "block";
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="showRandomImage()">Show Random Image</button>
+    <br>
+    <img id="random-image">
+    <br>
+    <p id="random-index-text">Random index: <span id="random-index"></span></p>
+  </body>
+</html>
